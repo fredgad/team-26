@@ -63,9 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const jsonData = JSON.stringify(this.registration.array)
                 // console.log(jsonData) 
                 axios
-                    .post('./form.php', {
-                      body: jsonData
-                    })
+                    .post('./form.php', jsonData)
                     .then(response => console.log(response.data))
                     .catch(error => console.log(error));
             }

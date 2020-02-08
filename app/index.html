@@ -12,14 +12,11 @@
 <noscript>Для отображения вам необходимо подключить JavaScript</noscript>
 <div id="wrapper">
 
-
-    <header id="header">
-
         <nav>
             <div class="nav_test" @click="switchPage('startPage')">главная</div>
+            <div class="nav_test" @click="switchPage('account')">личный кабинет</div>
         </nav>
-        
-    </header>
+  
 
 
 
@@ -53,7 +50,7 @@
                 <div class="registrationPage__col_1">
                     <span>
                         <input v-model="registration.number" class="basic-slide" id="phone" type="text" placeholder="+7 777 777 77 77" />
-                        <label for="phone">Номер телефона:</label>
+                        <label for="phone">Телефон:</label>
                     </span>
     
                     <span> 
@@ -61,7 +58,7 @@
                         <label for="name">ИНН:</label>
                     </span>
     
-                    <div>
+                    <div class="registrationPage__div_1">
                         <span>
                             <input v-model="registration.organisationName" placeholder="0000000000" class="basic-slide form__organisation" id="organisation" type="text"/>
                             <label for="organisation">Организация:</label>
@@ -74,10 +71,10 @@
                         </select>
                     </div>
     
-                    <div>
+                    <div class="registrationPage__div_2">
                         <span> 
                             <input id="jurAddress" v-model="registration.jurAddress_1" type="text" class="basic-slide"  placeholder="">
-                            <label for="jurAddress">Юридический Адрес:</label>
+                            <label for="jurAddress">Юр. Адрес:</label>
                         </span>
                         <input v-model="registration.jurAddress_2" placeholder="">
                     </div>
@@ -99,10 +96,9 @@
                     </span>  
     
                     <div class="registrationSubmit" @click={{submit()}}>Зарегистрироваться</div>
+
                 </div>
             </form>
- 
-            <div class="nav_test" @click="switchPage('autorisationPage')">авторизация</div>
         </div>
 
 
@@ -114,7 +110,6 @@
                 <p>Пароль: </p>
                 <input v-model="authorisation.mail" placeholder="отредактируй меня">
                 <div class="authorisationSubmit">Войти</div>  
-                <div class="nav_test" @click="switchPage('account')">личный кабинет</div>
             </form>
         </div>
 

@@ -64,6 +64,13 @@ main {
 }
 
 
+nav {
+  z-index: 99999999;
+  position: absolute
+}
+
+
+
 // ------------------startPage
 .startPage {
     animation: pageIn .8s ease;
@@ -126,6 +133,7 @@ main {
 
     form {
         display: flex;
+        flex-direction: column;
         border: 2px solid;
         z-index: 99999;
     }
@@ -145,11 +153,12 @@ main {
     form { 
         display: flex;
         justify-content: space-around;
+        align-items: center;
         z-index: 99999;
         flex-wrap: wrap;
         min-height: 45vh;
         max-height: 45vh;
-        width: 90%;
+        width: 1000px;
         max-width: 90%;
 
         .registrationPage__col_1, .registrationPage__col_2 {
@@ -162,7 +171,46 @@ main {
           align-content: space-between;
           justify-content: space-between;
 
+          .registrationPage__div_1 {
+            display: flex;
+            justify-content: space-between;
+            min-width: 300px;
+            max-width: 300px; 
 
+            input {
+              min-width: 230px;  
+              max-width: 230px;
+            }
+            span {
+              min-width: 250px;  
+              max-width: 250px;
+            }
+            select {
+              min-width: 65px;
+              min-height: 40px;
+              font: 14px, arial, sans-serif;
+              border-radius: 7px;
+            }
+          }
+          .registrationPage__div_2 {
+            display: flex;
+            justify-content: space-between;
+            min-width: 300px;
+            max-width: 300px; 
+
+            span {
+              min-width: 250px;  
+              max-width: 250px;
+              input {
+                min-width: 230px;  
+                max-width: 230px;
+              }
+            }
+            > input {
+              min-width: 65px;
+              min-height: 36px;
+            }
+          }
           .form__organisation {
             display: flex;  
 
@@ -187,6 +235,15 @@ main {
             outline: none;
             border-radius: 7px;
             max-height: 35px;
+          }
+          .registrationSubmit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 24px;
+            max-height: 40px;
+            font: 18px, arial, sans-serif;
+            color: #fff;
           }
           input, select {
             border: 1px solid grey;
@@ -316,15 +373,15 @@ main {
 
   + label {
     display: inline-block;
-    font-family: arial, sans-serif;
+    font: 13px, arial, sans-serif;
     color: #fff;
     position: absolute;
     top: 0;
     left: 0;
-    padding: 11px 15px;
+    padding: 12px;  
     text-shadow: 0 1px 0 rgba(19,74,70,.4);
     background: #ff1300;
-    width: 150px;
+    width: 120px;
     transition: all .3s ease-in-out;
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;

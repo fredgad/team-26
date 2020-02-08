@@ -88,6 +88,11 @@ main .sun {
   top: -20%;
 }
 
+nav {
+  z-index: 99999999;
+  position: absolute;
+}
+
 .startPage {
   -webkit-animation: pageIn .8s ease;
           animation: pageIn .8s ease;
@@ -177,6 +182,10 @@ main .sun {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: 2px solid;
   z-index: 99999;
 }
@@ -205,12 +214,15 @@ main .sun {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 99999;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   min-height: 45vh;
   max-height: 45vh;
-  width: 90%;
+  width: 1000px;
   max-width: 90%;
 }
 
@@ -231,6 +243,60 @@ main .sun {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.registrationPage form .registrationPage__col_1 .registrationPage__div_1, .registrationPage form .registrationPage__col_2 .registrationPage__div_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.registrationPage form .registrationPage__col_1 .registrationPage__div_1 input, .registrationPage form .registrationPage__col_2 .registrationPage__div_1 input {
+  min-width: 230px;
+  max-width: 230px;
+}
+
+.registrationPage form .registrationPage__col_1 .registrationPage__div_1 span, .registrationPage form .registrationPage__col_2 .registrationPage__div_1 span {
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.registrationPage form .registrationPage__col_1 .registrationPage__div_1 select, .registrationPage form .registrationPage__col_2 .registrationPage__div_1 select {
+  min-width: 65px;
+  min-height: 40px;
+  font: 14px, arial, sans-serif;
+  border-radius: 7px;
+}
+
+.registrationPage form .registrationPage__col_1 .registrationPage__div_2, .registrationPage form .registrationPage__col_2 .registrationPage__div_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.registrationPage form .registrationPage__col_1 .registrationPage__div_2 span, .registrationPage form .registrationPage__col_2 .registrationPage__div_2 span {
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.registrationPage form .registrationPage__col_1 .registrationPage__div_2 span input, .registrationPage form .registrationPage__col_2 .registrationPage__div_2 span input {
+  min-width: 230px;
+  max-width: 230px;
+}
+
+.registrationPage form .registrationPage__col_1 .registrationPage__div_2 > input, .registrationPage form .registrationPage__col_2 .registrationPage__div_2 > input {
+  min-width: 65px;
+  min-height: 36px;
 }
 
 .registrationPage form .registrationPage__col_1 .form__organisation, .registrationPage form .registrationPage__col_2 .form__organisation {
@@ -262,6 +328,22 @@ main .sun {
   outline: none;
   border-radius: 7px;
   max-height: 35px;
+}
+
+.registrationPage form .registrationPage__col_1 .registrationSubmit, .registrationPage form .registrationPage__col_2 .registrationSubmit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 24px;
+  max-height: 40px;
+  font: 18px, arial, sans-serif;
+  color: #fff;
 }
 
 .registrationPage form .registrationPage__col_1 input, .registrationPage form .registrationPage__col_1 select, .registrationPage form .registrationPage__col_2 input, .registrationPage form .registrationPage__col_2 select {
@@ -391,15 +473,15 @@ main .sun {
 
 .basic-slide + label {
   display: inline-block;
-  font-family: arial, sans-serif;
+  font: 13px, arial, sans-serif;
   color: #fff;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 11px 15px;
+  padding: 12px;
   text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
   background: #ff1300;
-  width: 150px;
+  width: 120px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   border-top-left-radius: 7px;
