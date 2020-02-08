@@ -2,20 +2,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     var app = new Vue({
-        el: '#vue',  
+        el: '#wrapper',  
         data: {
-            input_1: '+7',
-            input_2: '',
-            input_3: '',
+            registration_1: '+7',
+            registration_2: '',
+            registration_3: '',
             selected: 'OOO',   
-            input_4_1: '',
-            input_4_2: '',
-            input_5: '',
+            registration_4_1: '',
+            registration_4_2: '',
+            registration_5: '',
+            registration_6: '',
+            registration_7: '',
+        },
+        computed: {
+            combineRegistrationForm() {
+                let array = {
+                    number: this.registration_1,
+                    inn: this.registration_2,
+                    organisationType: this.registration_3,
+                    organisationName: this.selected,   
+                    jurAddress_1: this.registration_4_1,
+                    jurAddress_2: this.registration_4_2,
+                    mail: this.registration_5,
+                    password: this.registration_6, 
+                }
+                console.log(array)
+            }
         },
         methods: {
             submit() { 
-                console.log(this.input_1, this.input_2, this.input_3)
-                // e.preventDefault()
+                this.combineRegistrationForm
             }
         }
     }) 

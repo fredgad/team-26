@@ -14,19 +14,26 @@
         <div class="logotype">
             <img src="./images/icons/logo.svg" alt="">
         </div>
+
+        <nav>
+            <div class="main">главная</div>
+            <div class="autoris">авторизация</div>
+            <div class="registr">регистрация</div>
+
+        </nav>
     </header>
 
     <noscript>Для отображения вам необходимо подключить JavaScript</noscript>
-    <main id="vue"> 
+    <main> 
         <div class="startPage"></div>
 
         <div class="registrationPage">
             <form>
-                <p>Номер телефона: {{ input_1 }}</p>
-                <input v-model="input_1" placeholder="+7 777 777 77 77">
-                <p>Инн: {{ input_2 }}</p>
-                <input v-model="input_2" placeholder="0000000000">
-                <p>Организация: {{ input_3 }}</p>
+                <p>Номер телефона: </p>
+                <input v-model="registration_1" placeholder="+7 777 777 77 77">
+                <p>ИНН: </p>
+                <input v-model="registration_2" placeholder="0000000000">
+                <p>Организация: </p> 
                 <div class="form__organisation">
                     <select v-model="selected">
                         <option disabled value="">Выберите один из вариантов</option>
@@ -34,27 +41,31 @@
                         <option>OAO</option>
                         <option>ИП</option>
                     </select>
-                    <input v-model="input_3" placeholder="отредактируй меня">
+                    <input v-model="registration_3" placeholder="отредактируй меня">
                 </div>
-                <p>Юридический Адрес: {{ input_4_1 }}</p>
-                <input v-model="input_4_1" placeholder="отредактируй меня">
-                <p>Юридический Адрес: {{ input_4_2 }}</p>
-                <input v-model="input_4_2" placeholder="отредактируй меня">
-                <p>Почта: {{ input_5 }}</p>
-                <input v-model="input_5" placeholder="mail@mail.com">
+                <p>Юридический Адрес: </p>
+                <div class="form__adress">
+                    <input v-model="registration_4_1" placeholder="отредактируй меня">
+                    <input v-model="registration_4_2" placeholder="отредактируй меня">
+                </div>
+                <p>Почта: </p>
+                <input v-model="registration_5" placeholder="mail@mail.com">
     
                 <div @click={{submit()}}>Зарегестрироваться</div>
             </form>
         </div>
 
         <div class="autorisationPage">
-            <form>
-
-            </form>
+            <!-- <form>
+                <p>Почта: {{ input_5 }}</p>
+                <input v-model="input_5" placeholder="mail@mail.com">
+                <p>Юридический Адрес: {{ input_4_2 }}</p>
+                <input v-model="input_2" placeholder="отредактируй меня">
+            </form> -->
         </div>
 
         <div class="cabinet">
-            
+
         </div>
 
     </main>
