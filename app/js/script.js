@@ -35,8 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
             jurAddress_1 = _this$registration.jurAddress_1,
             jurAddress_2 = _this$registration.jurAddress_2,
             email = _this$registration.email,
-            password = _this$registration.password; // if(true) {
-        // }
+            password = _this$registration.password;
+
+        if (true) {}
 
         this.registration.array = {
           number: number,
@@ -48,26 +49,30 @@ document.addEventListener('DOMContentLoaded', function () {
           mail: email,
           password: password
         };
-        console.log(this.registration.array);
       }
     },
     methods: {
       submit: function submit() {
         this.combineRegistrationForm;
+        this.sendAjax();
       },
       switchPage: function switchPage(xxx) {
         this.currentPage = xxx;
         console.log(this.currentPage);
+      },
+      sendAjax: function sendAjax(url) {
+        var jsonData = JSON.stringify(this.registration.array);
+        console.log(this.registration.array);
+        console.log(jsonData); // axios
+        //     .post(url, {
+        //       body: this.registration.array
+        //     })
+        //     .then(response => console.log(response.data))
+        //     .catch(error => console.log(error));
       }
     }
   });
-  window.addEventListener('scroll', function () {//     if($(window).width() < 910) {
-    //         let scrolled = window.pageYOffset || document.scrollTop
-    //         if (scrolled > 150) {
-    //         } else {
-    //         }
-    //    }
-  });
+  window.addEventListener('scroll', function () {});
   window.addEventListener('click', function (e) {
     if (e.target) {} else {}
   });

@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         computed: {
             combineRegistrationForm() {
-                let {number, inn,organisationName, organisationType, 
+                const {number, inn,organisationName, organisationType, 
                     jurAddress_1, jurAddress_2,email,password} = this.registration
 
-                // if(true) {
+                if(true) {
                     
-                // }
+                }
 
                 this.registration.array = {
                     number: number,
@@ -46,16 +46,29 @@ document.addEventListener('DOMContentLoaded', function() {
                     mail: email,
                     password: password, 
                 }
-                console.log(this.registration.array)
+                
+                
             }
         },
         methods: {
             submit() {
                 this.combineRegistrationForm
+                this.sendAjax()
             },
             switchPage(xxx) {
                 this.currentPage = xxx
                 console.log(this.currentPage)
+            },
+            sendAjax(url) {
+                const jsonData = JSON.stringify(this.registration.array)
+                console.log(this.registration.array)
+                console.log(jsonData) 
+                // axios
+                //     .post(url, {
+                //       body: this.registration.array
+                //     })
+                //     .then(response => console.log(response.data))
+                //     .catch(error => console.log(error));
             }
         }
     }) 
@@ -63,15 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 window.addEventListener('scroll', ()=> {
-//     if($(window).width() < 910) {
-//         let scrolled = window.pageYOffset || document.scrollTop
 
-//         if (scrolled > 150) {
-            
-//         } else {
-           
-//         }
-//    }
 });
 
 window.addEventListener('click', e => {

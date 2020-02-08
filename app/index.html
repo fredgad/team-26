@@ -9,11 +9,11 @@
 </head>
 <body class="index">
 
+<noscript>Для отображения вам необходимо подключить JavaScript</noscript>
 <div id="wrapper">
+
+
     <header id="header">
-        <div class="logotype">
-            <img src="./images/icons/logo.svg" alt="">
-        </div>
 
         <nav>
             <div class="nav_test" @click="switchPage('startPage')">главная</div>
@@ -21,37 +21,61 @@
         
     </header>
 
-    <noscript>Для отображения вам необходимо подключить JavaScript</noscript>
-    <main> 
 
 
-        <!-- Main page -->
+
+    <!-- main -->
+    <main v-if="currentPage !== 'account'"> 
+        <div class="logotype">
+            <img src="./images/icons/logo2.svg" alt="">
+        </div>
+        <img class="sun" src="./images/banners/sun.png" alt=""> 
+
+
+        <!-- startPage -->
         <div v-if="currentPage === 'startPage'" class="startPage">
-            <div class="nav_test" @click="switchPage('autorisationPage')">авторизация</div>
-            <div class="nav_test" @click="switchPage('registrationPage')">регистрация</div>
+            <img class="startPage__cloud" src="./images/banners/obl.png" alt="">
+            <img class="startPage__cloud" src="./images/banners/obl.png" alt="">
+
+            <div class="startPage__buttons">
+                <div @click="switchPage('autorisationPage')">авторизация</div>
+                <div @click="switchPage('registrationPage')">регистрация</div>
+            </div>
         </div>   
 
 
 
 
 
-
-        <div v-if="currentPage === 'registrationPage'" class="registrationPage">
+        <!-- Registration page -->
+        <div class="registrationPage"v-if="currentPage === 'registrationPage'">
             <form>
-                <p>Номер телефона: </p>
-                <input v-model="registration.number" placeholder="+7 777 777 77 77">
-                <p>ИНН: </p>
-                <input v-model="registration.inn" placeholder="0000000000">
-                <p>Организация: </p>
-                <div class="form__organisation">
+                <span>
+                    <input v-model="registration.number" class="basic-slide" id="phone" type="text" placeholder="+7 777 777 77 77" />
+                    <label for="phone">Номер телефона:</label>
+                </span>
+                <span>
+                    <input v-model="registration.inn" placeholder="0000000000" class="basic-slide" id="name" type="text"/>
+                    <label for="name">ИНН:</label>
+                </span>
+
+                <span>
+                    <input v-model="registration.inn" placeholder="0000000000" class="basic-slide form__organisation" id="name" type="text"/>
+                    <label for="name">Организация:</label>
                     <select v-model="registration.organisationType">
                         <option disabled value="">Выберите один из вариантов</option>
                         <option>OOO</option>
                         <option>OAO</option>
-                        <option>ИП</option>
+                        <option>ИП</option> 
                     </select>
+                </span>
+                
+                <div class="form__organisation">
                     <input v-model="registration.organisationName" placeholder="отредактируй меня">
+                    
                 </div>
+                
+                
                 <p>Юридический Адрес: </p>
                 <div class="form__adress">
                     <input v-model="registration.jurAddress_1" placeholder="отредактируй меня">
@@ -71,11 +95,8 @@
         </div>
 
 
-
-
-
-
-        <div v-if="currentPage === 'autorisationPage'" class="autorisationPage">
+        <!-- Authorisation page -->
+        <div class="authorisationPage" v-if="currentPage === 'autorisationPage'">
             <form>
                 <p>Ваша почта: </p>
                 <input v-model="authorisation.pass" placeholder="mail@mail.com">
@@ -90,28 +111,31 @@
 
 
 
-        <div v-if="currentPage === 'account'" class="account">
-            <h2>Покупка билетов</h2>
-            <nav>
-                <div @click="switchaccount('standart')">Стандарт</div>
-                <div @click="switchaccount('hereAndThere')">Туда-обратно</div>
-                <div @click="switchaccount('business')">Бизнес</div>
-            </nav>
-
-            <div v-if="account.currentAccount === 'standart'" class="account__standart">
-                <div>
-                    <p>Дата поездки: </p>
-                    <input type="text"> 
-                </div>
-
-            </div>
-
-        </div>
-
+        
     </main>
 
 
 
+    <!-- Account -->
+    <div v-else class="account">
+        <h2>Покупка билетов</h2>
+        <nav>
+            <div @click="switchaccount('standart')">Стандарт</div>
+            <div @click="switchaccount('hereAndThere')">Туда-обратно</div>
+            <div @click="switchaccount('business')">Бизнес</div>
+        </nav>
+        <div v-if="account.currentAccount === 'standart'" class="account__standart">
+            <div>
+                <p>Дата поездки: </p>
+                <input type="text"> 
+            </div>
+        </div>
+    </div>
+
+
+    <div class="train" v-if="currentPage !== 'account'">
+        <img src="./images/banners/poezzzzzzzzzzd.png" alt="">
+    </div>
 
 
 </div>
