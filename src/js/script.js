@@ -4,25 +4,32 @@ document.addEventListener('DOMContentLoaded', function() {
     var app = new Vue({
         el: '#vue',  
         data: {
+            selected: 'ss',
+            input_1: '',
+            input_2: '',
+            input_3: '',
+            input_4_1: '',
+            input_4_2: '',
+            input_5: '',
         }
     }) 
 
 
 
 window.addEventListener('scroll', ()=> {
-    if($(window).width() < 910) {
-        let scrolled = window.pageYOffset || document.scrollTop
+//     if($(window).width() < 910) {
+//         let scrolled = window.pageYOffset || document.scrollTop
 
-        if (scrolled > 150) {
+//         if (scrolled > 150) {
             
-        } else {
+//         } else {
            
-        }
-   }
+//         }
+//    }
 });
 
 window.addEventListener('click', e => {
-    if($(e.target).hasClass('nav') || $(e.target).parents().hasClass('nav')) {
+    if(e.target) {
         
     } else {
 

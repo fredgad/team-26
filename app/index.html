@@ -20,26 +20,28 @@
     <main id="vue"> 
 
         <form>
-            <select v-model="selected">
-                <option disabled value="">Выберите один из вариантов</option>
-                <option>А</option>
-                <option>Б</option>
-                <option>В</option>
-            </select>
-            <span>Выбрано: {{ selected }}</span>
-
-
-            <input v-model="message" placeholder="отредактируй меня">
-            <p>Введённое сообщение: {{ message_1 }}</p>
-            <input v-model="message" placeholder="отредактируй меня">
-            <p>Введённое сообщение: {{ message_2 }}</p>
-            <input v-model="message" placeholder="отредактируй меня">
-            <p>Введённое сообщение: {{ message_3 }}</p>
-            <input v-model="message" placeholder="отредактируй меня">
-            <p>Введённое сообщение: {{ message_4 }}</p>
-            <input v-model="message" placeholder="отредактируй меня">
-            <p>Введённое сообщение: {{ message_5 }}</p>
+            
+            <p>Номер телефона: {{ input_1 }}</p>
+            <input v-model="input_1" placeholder="+7 777 777 77 77">
+            <p>Инн: {{ input_2 }}</p>
+            <input v-model="input_2" placeholder="0000000000">
+            <p>Организация: {{ input_3 }}</p>
+                <select v-model="selected">
+                    <option disabled value="">Выберите один из вариантов</option>
+                    <option>OOO</option>
+                    <option>OAO</option>
+                    <option>ИП</option>
+                </select>
+            <input v-model="input_3" placeholder="отредактируй меня">
+            <p>Юридический Адрес: {{ input_4_1 }}</p>
+            <input v-model="input_4_1" placeholder="отредактируй меня">
+            <p>Юридический Адрес: {{ input_4_2 }}</p>
+            <input v-model="input_4_2" placeholder="отредактируй меня">
+            <p>Почта: {{ input_5 }}</p>
+            <input v-model="input_1" placeholder="mail@mail.com">
         </form>
+
+
 
     </main>
 

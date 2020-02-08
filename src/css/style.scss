@@ -10,8 +10,11 @@
     > * {
         max-width: 1024px;
         width: 95%;
-        border: 1px solid red;
         margin-top: 20px;
+    }
+    input {
+        outline: none;
+        border: 1px solid grey;
     }
 }
 
