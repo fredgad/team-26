@@ -48,47 +48,58 @@
 
 
         <!-- Registration page -->
-        <div class="registrationPage"v-if="currentPage === 'registrationPage'">
+        <div class="registrationPage" v-if="currentPage === 'registrationPage'">
             <form>
-                <span>
-                    <input v-model="registration.number" class="basic-slide" id="phone" type="text" placeholder="+7 777 777 77 77" />
-                    <label for="phone">Номер телефона:</label>
-                </span>
-                <span> 
-                    <input v-model="registration.inn" placeholder="0000000000" class="basic-slide" id="name" type="text"/>
-                    <label for="name">ИНН:</label>
-                </span>
-
-                <span>
-                    <input v-model="registration.organisationType" placeholder="0000000000" class="basic-slide form__organisation" id="name" type="text"/>
-                    <label for="name">Организация:</label>
-                    <select v-model="registration.organisationType">
-                        <option disabled value="">Выберите один из вариантов</option>
-                        <option>OOO</option>
-                        <option>OAO</option>
-                        <option>ИП</option> 
-                    </select>
-                </span>
-                
-                <div class="form__organisation">
-                    <input v-model="registration.organisationName" placeholder="отредактируй меня">
-                    
-                </div>
-                
-                
-                <p>Юридический Адрес: </p>
-                <div class="form__adress">
-                    <input v-model="registration.jurAddress_1" placeholder="отредактируй меня">
-                    <input v-model="registration.jurAddress_2" placeholder="отредактируй меня">
-                </div>
-                <p>Почта: </p>  
-                <input v-model="registration.email" placeholder="mail@mail.com">
-                <p>Пароль: </p>
-                <input v-model="registration.password" placeholder="Ваш пароль">
-                <p>Повторите пароль: </p>
-                <input v-model="registration.repeatPassword" placeholder="Повторите пароль">
+                <div class="registrationPage__col_1">
+                    <span>
+                        <input v-model="registration.number" class="basic-slide" id="phone" type="text" placeholder="+7 777 777 77 77" />
+                        <label for="phone">Номер телефона:</label>
+                    </span>
     
-                <div class="registrationSubmit" @click={{submit()}}>Зарегистрироваться</div>
+                    <span> 
+                        <input v-model="registration.inn" placeholder="0000000000" class="basic-slide" id="name" type="text"/>
+                        <label for="name">ИНН:</label>
+                    </span>
+    
+                    <div>
+                        <span>
+                            <input v-model="registration.organisationName" placeholder="0000000000" class="basic-slide form__organisation" id="organisation" type="text"/>
+                            <label for="organisation">Организация:</label>
+                        </span>
+                        <select v-model="registration.organisationType">
+                            <option disabled value="">Выберите один из вариантов</option>
+                            <option>OOO</option>
+                            <option>OAO</option>
+                            <option>ИП</option> 
+                        </select>
+                    </div>
+    
+                    <div>
+                        <span> 
+                            <input id="jurAddress" v-model="registration.jurAddress_1" type="text" class="basic-slide"  placeholder="">
+                            <label for="jurAddress">Юридический Адрес:</label>
+                        </span>
+                        <input v-model="registration.jurAddress_2" placeholder="">
+                    </div>
+                </div>
+                
+                <div class="registrationPage__col_2">
+                    <span> 
+                        <input v-model="registration.email" placeholder="mail@mail.com" class="basic-slide" id="email" type="text"/>
+                        <label for="email">Почта:</label>
+                    </span>
+    
+                    <span> 
+                        <input v-model="registration.password" placeholder="Ваш пароль" class="basic-slide" id="password" type="text"/>
+                        <label for="password">Пароль:</label>
+                    </span>
+                    <span> 
+                        <input v-model="registration.repeatPassword" placeholder="Повторите пароль" class="basic-slide" id="repeatPassword" type="text"/>
+                        <label for="repeatPassword">Повторите пароль:</label>
+                    </span>  
+    
+                    <div class="registrationSubmit" @click={{submit()}}>Зарегистрироваться</div>
+                </div>
             </form>
  
             <div class="nav_test" @click="switchPage('autorisationPage')">авторизация</div>

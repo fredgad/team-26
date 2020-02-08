@@ -205,27 +205,16 @@ main .sun {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  border: 2px solid;
   z-index: 99999;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  min-height: 45vh;
   max-height: 45vh;
-  min-width: 90%;
+  width: 90%;
+  max-width: 90%;
 }
 
-.registrationPage form > span {
-  position: relative;
-}
-
-.registrationPage form input, .registrationPage form select, .registrationPage form p, .registrationPage form span, .registrationPage form .form__organisation, .registrationPage form .form__adress, .registrationPage form .registrationSubmit {
-  max-width: 300px;
-}
-
-.registrationPage .nav_test {
-  position: absolute;
-}
-
-form {
+.registrationPage form .registrationPage__col_1, .registrationPage form .registrationPage__col_2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -233,28 +222,54 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 500px;
+  max-width: 300px;
+  min-width: 300px;
+  min-height: 200px;
+  max-height: 250px;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-form .form__organisation {
+.registrationPage form .registrationPage__col_1 .form__organisation, .registrationPage form .registrationPage__col_2 .form__organisation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-form .form__organisation select {
+.registrationPage form .registrationPage__col_1 .form__organisation select, .registrationPage form .registrationPage__col_2 .form__organisation select {
   width: 80px;
 }
 
-form .form__organisation input {
+.registrationPage form .registrationPage__col_1 .form__organisation input, .registrationPage form .registrationPage__col_2 .form__organisation input {
   width: 100%;
 }
 
-form input, form select {
+.registrationPage form .registrationPage__col_1 > div, .registrationPage form .registrationPage__col_2 > div {
+  max-height: 35px;
+}
+
+.registrationPage form .registrationPage__col_1 span, .registrationPage form .registrationPage__col_2 span {
+  position: relative;
+  max-height: 35px;
+}
+
+.registrationPage form .registrationPage__col_1 input, .registrationPage form .registrationPage__col_1 select, .registrationPage form .registrationPage__col_1 p, .registrationPage form .registrationPage__col_1 span, .registrationPage form .registrationPage__col_1 .form__organisation, .registrationPage form .registrationPage__col_1 .form__adress, .registrationPage form .registrationPage__col_1 .registrationSubmit, .registrationPage form .registrationPage__col_2 input, .registrationPage form .registrationPage__col_2 select, .registrationPage form .registrationPage__col_2 p, .registrationPage form .registrationPage__col_2 span, .registrationPage form .registrationPage__col_2 .form__organisation, .registrationPage form .registrationPage__col_2 .form__adress, .registrationPage form .registrationPage__col_2 .registrationSubmit {
+  min-width: 300px;
+  max-width: 300px;
   outline: none;
-  border: 1px solid grey;
-  padding: 7px;
   border-radius: 7px;
+  max-height: 35px;
+}
+
+.registrationPage form .registrationPage__col_1 input, .registrationPage form .registrationPage__col_1 select, .registrationPage form .registrationPage__col_2 input, .registrationPage form .registrationPage__col_2 select {
+  border: 1px solid grey;
+}
+
+.registrationPage .nav_test {
+  position: absolute;
 }
 
 .registrationSubmit, .authorisationSubmit {
@@ -339,7 +354,7 @@ form input, form select {
 }
 
 .row:nth-child(4), .row:nth-child(6) {
-  background: #7AB893;
+  background: #ff1300;
 }
 
 .row:nth-child(5) {
@@ -358,8 +373,8 @@ form input, form select {
   padding: 10px 0 10px 15px;
   font-family: "Open Sans", sans;
   font-weight: 400;
-  color: #377D6A;
-  background: #efefef;
+  color: #ffffff;
+  background: #ffffff;
   border: 0;
   border-radius: 3px;
   outline: 0;
@@ -376,16 +391,19 @@ form input, form select {
 
 .basic-slide + label {
   display: inline-block;
+  font-family: arial, sans-serif;
+  color: #fff;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px 15px;
+  padding: 11px 15px;
   text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
-  background: #7AB893;
+  background: #ff1300;
+  width: 150px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 
 .basic-slide:focus,
@@ -460,7 +478,7 @@ form input, form select {
   right: 100%;
   bottom: 0;
   width: 100%;
-  background: #7AB893;
+  background: #ff1300;
   z-index: -1;
   -webkit-transform: translate(0);
           transform: translate(0);
@@ -527,7 +545,7 @@ form input, form select {
   left: 0;
   padding: 10px 15px;
   text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
-  background: #7AB893;
+  background: #ff1300;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
   border-top-left-radius: 3px;
@@ -817,7 +835,7 @@ span:nth-child(3) .slide-up:active {
   left: 0;
   padding: 10px 15px;
   text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
-  background: #7AB893;
+  background: #ff1300;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   border-top-left-radius: 3px;
@@ -892,7 +910,7 @@ span:nth-child(3) .card-slide:active {
   left: 0;
   padding: 10px 15px;
   text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
-  background: #7AB893;
+  background: #ff1300;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   -webkit-transform-origin: 2px 2px;

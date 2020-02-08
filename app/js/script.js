@@ -57,18 +57,18 @@ document.addEventListener('DOMContentLoaded', function () {
         this.sendAjax();
       },
       switchPage: function switchPage(xxx) {
-        this.currentPage = xxx;
-        console.log(this.currentPage);
+        this.currentPage = xxx; // console.log(this.currentPage)
       },
       sendAjax: function sendAjax(url) {
-        var jsonData = JSON.stringify(this.registration.array);
-        console.log(this.registration.array);
-        console.log(jsonData); // axios
-        //     .post(url, {
-        //       body: this.registration.array
-        //     })
-        //     .then(response => console.log(response.data))
-        //     .catch(error => console.log(error));
+        var jsonData = JSON.stringify(this.registration.array); // console.log(jsonData) 
+
+        axios.post('./form.php', {
+          body: jsonData
+        }).then(function (response) {
+          return console.log(response.data);
+        })["catch"](function (error) {
+          return console.log(error);
+        });
       }
     }
   });

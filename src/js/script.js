@@ -57,18 +57,17 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             switchPage(xxx) {
                 this.currentPage = xxx
-                console.log(this.currentPage)
+                // console.log(this.currentPage)
             },
             sendAjax(url) {
                 const jsonData = JSON.stringify(this.registration.array)
-                console.log(this.registration.array)
-                console.log(jsonData) 
-                // axios
-                //     .post(url, {
-                //       body: this.registration.array
-                //     })
-                //     .then(response => console.log(response.data))
-                //     .catch(error => console.log(error));
+                // console.log(jsonData) 
+                axios
+                    .post('./form.php', {
+                      body: jsonData
+                    })
+                    .then(response => console.log(response.data))
+                    .catch(error => console.log(error));
             }
         }
     }) 

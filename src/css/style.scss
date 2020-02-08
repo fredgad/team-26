@@ -64,6 +64,7 @@ main {
 }
 
 
+// ------------------startPage
 .startPage {
     animation: pageIn .8s ease;
     display: flex;
@@ -110,6 +111,8 @@ main {
     }
 }
 
+
+// ------------------authorisationPage
 .authorisationPage { 
     animation: pageIn .8s ease;
     justify-content: center;
@@ -127,6 +130,8 @@ main {
         z-index: 99999;
     }
 }
+
+// ------------------registrationPage
 .registrationPage {
     animation: pageIn .8s ease;
     justify-content: center;
@@ -140,17 +145,54 @@ main {
     form { 
         display: flex;
         justify-content: space-around;
-        border: 2px solid;
         z-index: 99999;
         flex-wrap: wrap;
+        min-height: 45vh;
         max-height: 45vh;
-        min-width: 90%;
+        width: 90%;
+        max-width: 90%;
 
-        > span {
-            position: relative;
-        }
-        input, select, p, span, .form__organisation, .form__adress, .registrationSubmit {
+        .registrationPage__col_1, .registrationPage__col_2 {
+          display: flex;
+          flex-direction: column;
+          max-width: 300px;
+          min-width: 300px;
+          min-height: 200px;
+          max-height: 250px;
+          align-content: space-between;
+          justify-content: space-between;
+
+
+          .form__organisation {
+            display: flex;  
+
+            select {
+                width: 80px;
+            }
+            input {
+                width: 100%;
+            }
+          }
+        
+          > div {
+            max-height: 35px;
+          }
+          span {
+              position: relative;
+              max-height: 35px;
+          }
+          input, select, p, span, .form__organisation, .form__adress, .registrationSubmit { 
+            min-width: 300px;
             max-width: 300px;
+            outline: none;
+            border-radius: 7px;
+            max-height: 35px;
+          }
+          input, select {
+            border: 1px solid grey;
+
+          }
+
         }
     }
     .nav_test {
@@ -158,28 +200,6 @@ main {
     }
 }
 
-
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-
-    .form__organisation {
-        display: flex;  
-        select {
-            width: 80px;
-        }
-        input {
-            width: 100%;
-        }
-    }
-    input, select {
-        outline: none;
-        border: 1px solid grey;
-        padding: 7px;
-        border-radius: 7px;
-    }
-}
 .registrationSubmit, .authorisationSubmit {
     outline: none;
     border: 1px solid grey;
@@ -190,6 +210,9 @@ form {
 }
 
 
+
+
+// ------------------train 
 .train {
     position: absolute;
     height: 28%;
@@ -221,7 +244,7 @@ form {
 
 
 
-@mixin epic-sides() { // https://codepen.io/MichaelArestad/pen/qltuk
+@mixin epic-sides() { 
     position: relative;
     z-index: 1;
 
@@ -259,7 +282,7 @@ form {
   }
   &:nth-child(4),
   &:nth-child(6) {
-    background: #7AB893;
+    background: #ff1300;
   }
   &:nth-child(5) {
     background: #B2E3AF;
@@ -277,8 +300,8 @@ form {
   padding: 10px 0 10px 15px;
   font-family: "Open Sans", sans;
   font-weight: 400;
-  color: #377D6A;
-  background: #efefef;
+  color: #ffffff;
+  background: #ffffff;
   border: 0;
   border-radius: 3px;
   outline: 0;
@@ -293,15 +316,18 @@ form {
 
   + label {
     display: inline-block;
+    font-family: arial, sans-serif;
+    color: #fff;
     position: absolute;
     top: 0;
     left: 0;
-    padding: 10px 15px;
+    padding: 11px 15px;
     text-shadow: 0 1px 0 rgba(19,74,70,.4);
-    background: #7AB893;
+    background: #ff1300;
+    width: 150px;
     transition: all .3s ease-in-out;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
   }
 }
 .basic-slide:focus,
@@ -366,7 +392,7 @@ form {
       right: 100%;
       bottom: 0;
       width: 100%;
-      background: #7AB893;
+      background: #ff1300;
       z-index: -1;
       transform: translate(0);
       transition: all .3s ease-in-out;
@@ -423,7 +449,7 @@ form {
     left: 0;
     padding: 10px 15px;
     text-shadow: 0 1px 0 rgba(19,74,70,.4);
-    background: #7AB893;
+    background: #ff1300;
     transition: all .4s ease-in-out;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -669,7 +695,7 @@ span:nth-child(3) .slide-up:active {
     left: 0;
     padding: 10px 15px;
     text-shadow: 0 1px 0 rgba(19,74,70,.4);
-    background: #7AB893;
+    background: #ff1300;
     transition: all .3s ease-in-out;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -731,7 +757,7 @@ span:nth-child(3) .card-slide:active {
     left: 0;
     padding: 10px 15px;
     text-shadow: 0 1px 0 rgba(19,74,70,.4);
-    background: #7AB893;
+    background: #ff1300;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     transform-origin: 2px 2px;
