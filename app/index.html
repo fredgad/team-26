@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="index">
+
+<div id="wrapper">
+    <header id="header">
+        <div class="logotype">
+            <h1>аэроэкспресс</h1>
+        </div>
+    </header>
+
+    <noscript>Для отображения вам необходимо подключить JavaScript</noscript>
+    <main id="vue"> 
+
+        <form>
+            <select v-model="selected">
+                <option disabled value="">Выберите один из вариантов</option>
+                <option>А</option>
+                <option>Б</option>
+                <option>В</option>
+            </select>
+            <span>Выбрано: {{ selected }}</span>
+
+
+            <input v-model="message" placeholder="отредактируй меня">
+            <p>Введённое сообщение: {{ message_1 }}</p>
+            <input v-model="message" placeholder="отредактируй меня">
+            <p>Введённое сообщение: {{ message_2 }}</p>
+            <input v-model="message" placeholder="отредактируй меня">
+            <p>Введённое сообщение: {{ message_3 }}</p>
+            <input v-model="message" placeholder="отредактируй меня">
+            <p>Введённое сообщение: {{ message_4 }}</p>
+            <input v-model="message" placeholder="отредактируй меня">
+            <p>Введённое сообщение: {{ message_5 }}</p>
+        </form>
+
+    </main>
+
+
+</div>
+    <script src="./js/vue.js"></script>
+    <script src="./js/script.js"></script> 
+</body>
+</html>

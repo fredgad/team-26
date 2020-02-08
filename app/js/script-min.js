@@ -1,0 +1,1 @@
+"use strict";document.addEventListener("DOMContentLoaded",function(){new Vue({el:"#vue",data:{}});window.addEventListener("scroll",function(){if($(window).width()<910)window.pageYOffset||document.scrollTop}),window.addEventListener("click",function(n){$(n.target).hasClass("nav")||$(n.target).parents().hasClass("nav")})});
