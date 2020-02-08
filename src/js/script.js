@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var app = new Vue({
         el: '#wrapper',  
-        data: {
+        data: { 
             currentPage: 'startPage',
             registration: {
                 number: '+7',
-                inn: '',
+                inn: '', 
                 organisationName: '',
                 organisationType: 'OOO',   
                 jurAddress_1: '',

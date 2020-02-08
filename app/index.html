@@ -54,13 +54,13 @@
                     <input v-model="registration.number" class="basic-slide" id="phone" type="text" placeholder="+7 777 777 77 77" />
                     <label for="phone">Номер телефона:</label>
                 </span>
-                <span>
+                <span> 
                     <input v-model="registration.inn" placeholder="0000000000" class="basic-slide" id="name" type="text"/>
                     <label for="name">ИНН:</label>
                 </span>
 
                 <span>
-                    <input v-model="registration.inn" placeholder="0000000000" class="basic-slide form__organisation" id="name" type="text"/>
+                    <input v-model="registration.organisationType" placeholder="0000000000" class="basic-slide form__organisation" id="name" type="text"/>
                     <label for="name">Организация:</label>
                     <select v-model="registration.organisationType">
                         <option disabled value="">Выберите один из вариантов</option>
