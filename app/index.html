@@ -112,19 +112,81 @@
                 <div class="authorisationSubmit">Войти</div>  
             </form>
         </div>
-
-
-
-
-
-        
     </main>
 
 
 
     <!-- Account -->
     <div v-else class="account">
-        <h2>Покупка билетов</h2>
+        <header>
+            <div class="left">
+                <img src="./images/icons/logo.svg" alt="">
+            </div> 
+            <div class="right">
+                <img src="./images/banners/белая звезда-min.png" alt="">
+            </div>
+        </header>
+
+        
+        <div class="account__body ">
+            <nav>
+                <div @click="switchAccount('organisationData')">
+                    <div>
+                        <img src="./images/icons/данные организации.png" alt="">
+                    </div>
+                    <p>Данные организации</p>
+                </div >
+                <div @click="switchAccount('staff')">
+                    <div>
+                        <img src="./images/icons/сотрудники.png" alt="">
+                    </div>
+                    <p>Сотрудники</p>
+                </div>
+                <div @click="switchAccount('buyTickets')">
+                    <div>
+                        <img src="./images/icons/купить билеты.png" alt="">
+                    </div>
+                    <p>Купить билеты</p>
+                </div>
+                <div @click="switchAccount('buyHistory')">   
+                    <div>
+                        <img src="./images/icons/история покупок.png" alt="">
+                    </div>
+                    <p>История покупок</p>
+                </div>
+                <div @click="switchPage('startPage')"> 
+                    <div>
+                        <img src="./images/icons/выход.png" alt="">
+                    </div>
+                    <p>Выход</p>
+                </div>
+            </nav>
+
+            <div v-if="account.accountPage === 'organisationData'" class="organisationData">
+                organisationData 
+            </div>
+            <div v-if="account.accountPage === 'staff'" class="staff">
+                staff
+            </div>
+            <div v-if="account.accountPage === 'buyTickets'" class="buyTickets">
+                buyTickets
+            </div>
+            <div v-if="account.accountPage === 'buyHistory'" class="buyHistory">
+                buyHistory
+            </div> 
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <h2>Покупка билетов</h2>
         <nav>
             <div @click="switchaccount('standart')">Стандарт</div>
             <div @click="switchaccount('hereAndThere')">Туда-обратно</div>
@@ -135,7 +197,7 @@
                 <p>Дата поездки: </p>
                 <input type="text"> 
             </div>
-        </div>
+        </div> -->
     </div>
 
 

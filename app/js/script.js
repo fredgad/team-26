@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var app = new Vue({
     el: '#wrapper',
     data: {
-      currentPage: 'startPage',
+      currentPage: 'account',
       registration: {
         number: '+7',
         inn: '',
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         pass: ''
       },
       account: {
-        currentAccount: 'standart'
+        accountPage: 'staff'
       }
     },
     computed: {
@@ -58,6 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       switchPage: function switchPage(xxx) {
         this.currentPage = xxx; // console.log(this.currentPage)
+      },
+      switchAccount: function switchAccount(xxx) {
+        this.account.accountPage = xxx;
+        console.log(this.account.accountPage);
       },
       sendAjax: function sendAjax(url) {
         var jsonData = JSON.stringify(this.registration.array); // console.log(jsonData) 
