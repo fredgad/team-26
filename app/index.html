@@ -12,36 +12,50 @@
 <div id="wrapper">
     <header id="header">
         <div class="logotype">
-            <h1>аэроэкспресс</h1>
+            <img src="./images/icons/logo.svg" alt="">
         </div>
     </header>
 
     <noscript>Для отображения вам необходимо подключить JavaScript</noscript>
     <main id="vue"> 
+        <div class="startPage"></div>
 
-        <form>
+        <div class="registrationPage">
+            <form>
+                <p>Номер телефона: {{ input_1 }}</p>
+                <input v-model="input_1" placeholder="+7 777 777 77 77">
+                <p>Инн: {{ input_2 }}</p>
+                <input v-model="input_2" placeholder="0000000000">
+                <p>Организация: {{ input_3 }}</p>
+                <div class="form__organisation">
+                    <select v-model="selected">
+                        <option disabled value="">Выберите один из вариантов</option>
+                        <option>OOO</option>
+                        <option>OAO</option>
+                        <option>ИП</option>
+                    </select>
+                    <input v-model="input_3" placeholder="отредактируй меня">
+                </div>
+                <p>Юридический Адрес: {{ input_4_1 }}</p>
+                <input v-model="input_4_1" placeholder="отредактируй меня">
+                <p>Юридический Адрес: {{ input_4_2 }}</p>
+                <input v-model="input_4_2" placeholder="отредактируй меня">
+                <p>Почта: {{ input_5 }}</p>
+                <input v-model="input_5" placeholder="mail@mail.com">
+    
+                <div @click={{submit()}}>Зарегестрироваться</div>
+            </form>
+        </div>
+
+        <div class="autorisationPage">
+            <form>
+
+            </form>
+        </div>
+
+        <div class="cabinet">
             
-            <p>Номер телефона: {{ input_1 }}</p>
-            <input v-model="input_1" placeholder="+7 777 777 77 77">
-            <p>Инн: {{ input_2 }}</p>
-            <input v-model="input_2" placeholder="0000000000">
-            <p>Организация: {{ input_3 }}</p>
-                <select v-model="selected">
-                    <option disabled value="">Выберите один из вариантов</option>
-                    <option>OOO</option>
-                    <option>OAO</option>
-                    <option>ИП</option>
-                </select>
-            <input v-model="input_3" placeholder="отредактируй меня">
-            <p>Юридический Адрес: {{ input_4_1 }}</p>
-            <input v-model="input_4_1" placeholder="отредактируй меня">
-            <p>Юридический Адрес: {{ input_4_2 }}</p>
-            <input v-model="input_4_2" placeholder="отредактируй меня">
-            <p>Почта: {{ input_5 }}</p>
-            <input v-model="input_1" placeholder="mail@mail.com">
-        </form>
-
-
+        </div>
 
     </main>
 

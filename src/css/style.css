@@ -9,6 +9,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -20,9 +23,36 @@
   margin-top: 20px;
 }
 
-#wrapper input {
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 500px;
+}
+
+form .form__organisation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form .form__organisation select {
+  width: 80px;
+}
+
+form .form__organisation input {
+  width: 100%;
+}
+
+form input, form select {
   outline: none;
   border: 1px solid grey;
+  padding: 7px;
+  border-radius: 7px;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

@@ -4,13 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var app = new Vue({
         el: '#vue',  
         data: {
-            selected: 'ss',
-            input_1: '',
+            input_1: '+7',
             input_2: '',
             input_3: '',
+            selected: 'OOO',   
             input_4_1: '',
             input_4_2: '',
             input_5: '',
+        },
+        methods: {
+            submit() { 
+                console.log(this.input_1, this.input_2, this.input_3)
+                // e.preventDefault()
+            }
         }
     }) 
 
