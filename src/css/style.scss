@@ -8,6 +8,24 @@
     width: 100%;
     overflow: hidden;
 
+    header {
+        display: flex;justify-content: space-between;
+    }
+    .nav_test {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 35px;
+        background: #222;
+        border-radius: 7px;
+        padding: 7px;
+        margin-top: 10px;
+        width: 200px;
+        font: 22px, arial, sans-serif;
+        color: #fff;
+        cursor: pointer;
+    }
+
     > * {
         max-width: 1024px;
         width: 95%;
@@ -35,6 +53,14 @@ form {
         border-radius: 7px;
     }
 }
+        .registrationSubmit, .authorisationSubmit {
+            outline: none;
+            border: 1px solid grey;
+            padding: 7px;
+            background: red; 
+            border-radius: 7px;
+            cursor: pointer;
+        }
 
 
 

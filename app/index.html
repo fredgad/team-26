@@ -16,59 +16,102 @@
         </div>
 
         <nav>
-            <div class="main">главная</div>
-            <div class="autoris">авторизация</div>
-            <div class="registr">регистрация</div>
-
+            <div class="nav_test" @click="switchPage('startPage')">главная</div>
         </nav>
+        
     </header>
 
     <noscript>Для отображения вам необходимо подключить JavaScript</noscript>
     <main> 
-        <div class="startPage"></div>
 
-        <div class="registrationPage">
+
+        <!-- Main page -->
+        <div v-if="currentPage === 'startPage'" class="startPage">
+            <div class="nav_test" @click="switchPage('autorisationPage')">авторизация</div>
+            <div class="nav_test" @click="switchPage('registrationPage')">регистрация</div>
+        </div>   
+
+
+
+
+
+
+        <div v-if="currentPage === 'registrationPage'" class="registrationPage">
             <form>
                 <p>Номер телефона: </p>
-                <input v-model="registration_1" placeholder="+7 777 777 77 77">
+                <input v-model="registration.number" placeholder="+7 777 777 77 77">
                 <p>ИНН: </p>
-                <input v-model="registration_2" placeholder="0000000000">
-                <p>Организация: </p> 
+                <input v-model="registration.inn" placeholder="0000000000">
+                <p>Организация: </p>
                 <div class="form__organisation">
-                    <select v-model="selected">
+                    <select v-model="registration.organisationType">
                         <option disabled value="">Выберите один из вариантов</option>
                         <option>OOO</option>
                         <option>OAO</option>
                         <option>ИП</option>
                     </select>
-                    <input v-model="registration_3" placeholder="отредактируй меня">
+                    <input v-model="registration.organisationName" placeholder="отредактируй меня">
                 </div>
                 <p>Юридический Адрес: </p>
                 <div class="form__adress">
-                    <input v-model="registration_4_1" placeholder="отредактируй меня">
-                    <input v-model="registration_4_2" placeholder="отредактируй меня">
+                    <input v-model="registration.jurAddress_1" placeholder="отредактируй меня">
+                    <input v-model="registration.jurAddress_2" placeholder="отредактируй меня">
                 </div>
-                <p>Почта: </p>
-                <input v-model="registration_5" placeholder="mail@mail.com">
+                <p>Почта: </p>  
+                <input v-model="registration.email" placeholder="mail@mail.com">
+                <p>Пароль: </p>
+                <input v-model="registration.password" placeholder="Ваш пароль">
+                <p>Повторите пароль: </p>
+                <input v-model="registration.repeatPassword" placeholder="Повторите пароль">
     
-                <div @click={{submit()}}>Зарегестрироваться</div>
+                <div class="registrationSubmit" @click={{submit()}}>Зарегистрироваться</div>
+            </form>
+ 
+            <div class="nav_test" @click="switchPage('autorisationPage')">авторизация</div>
+        </div>
+
+
+
+
+
+
+        <div v-if="currentPage === 'autorisationPage'" class="autorisationPage">
+            <form>
+                <p>Ваша почта: </p>
+                <input v-model="authorisation.pass" placeholder="mail@mail.com">
+                <p>Пароль: </p>
+                <input v-model="authorisation.mail" placeholder="отредактируй меня">
+                <div class="authorisationSubmit">Войти</div>  
+                <div class="nav_test" @click="switchPage('account')">личный кабинет</div>
             </form>
         </div>
 
-        <div class="autorisationPage">
-            <!-- <form>
-                <p>Почта: {{ input_5 }}</p>
-                <input v-model="input_5" placeholder="mail@mail.com">
-                <p>Юридический Адрес: {{ input_4_2 }}</p>
-                <input v-model="input_2" placeholder="отредактируй меня">
-            </form> -->
-        </div>
 
-        <div class="cabinet">
+
+
+
+        <div v-if="currentPage === 'account'" class="account">
+            <h2>Покупка билетов</h2>
+            <nav>
+                <div @click="switchaccount('standart')">Стандарт</div>
+                <div @click="switchaccount('hereAndThere')">Туда-обратно</div>
+                <div @click="switchaccount('business')">Бизнес</div>
+            </nav>
+
+            <div v-if="account.currentAccount === 'standart'" class="account__standart">
+                <div>
+                    <p>Дата поездки: </p>
+                    <input type="text"> 
+                </div>
+
+            </div>
 
         </div>
 
     </main>
+
+
+
 
 
 </div>

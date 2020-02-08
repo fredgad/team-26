@@ -4,34 +4,58 @@ document.addEventListener('DOMContentLoaded', function() {
     var app = new Vue({
         el: '#wrapper',  
         data: {
-            registration_1: '+7',
-            registration_2: '',
-            registration_3: '',
-            selected: 'OOO',   
-            registration_4_1: '',
-            registration_4_2: '',
-            registration_5: '',
-            registration_6: '',
-            registration_7: '',
+            currentPage: 'startPage',
+            registration: {
+                number: '+7',
+                inn: '',
+                organisationName: '',
+                organisationType: 'OOO',   
+                jurAddress_1: '',
+                jurAddress_2: '',
+                email: '',
+                password: '',
+                repeatPassword: '',
+                array: {
+
+                }
+            },
+            authorisation: {
+                mail: '',
+                pass: ''
+            },
+            account: {
+                currentAccount: 'standart'
+            }
         },
         computed: {
             combineRegistrationForm() {
-                let array = {
-                    number: this.registration_1,
-                    inn: this.registration_2,
-                    organisationType: this.registration_3,
-                    organisationName: this.selected,   
-                    jurAddress_1: this.registration_4_1,
-                    jurAddress_2: this.registration_4_2,
-                    mail: this.registration_5,
-                    password: this.registration_6, 
+                let {number, inn,organisationName, organisationType, 
+                    jurAddress_1, jurAddress_2,email,password} = this.registration
+
+                // if(true) {
+                    
+                // }
+
+                this.registration.array = {
+                    number: number,
+                    inn: inn,
+                    organisationType: organisationName,
+                    organisationName: organisationType,   
+                    jurAddress_1: jurAddress_1,
+                    jurAddress_2: jurAddress_2,
+                    mail: email,
+                    password: password, 
                 }
-                console.log(array)
+                console.log(this.registration.array)
             }
         },
         methods: {
-            submit() { 
+            submit() {
                 this.combineRegistrationForm
+            },
+            switchPage(xxx) {
+                this.currentPage = xxx
+                console.log(this.currentPage)
             }
         }
     }) 
