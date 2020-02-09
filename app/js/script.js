@@ -82,7 +82,14 @@ document.addEventListener('DOMContentLoaded', function () {
         };
         var authentificationArr = JSON.stringify(this.authorisation.arr);
         axios.post('./form.php', authentificationArr).then(function (response) {
-          return console.log(response.data);
+          // if(response.data[1]['success']) {
+          //     // console.log('1', response.data[0]['success'])
+          //     // console.log('2', response.data[1]['success'])
+          //     // console.log('3', response.data['success'])
+          //     // console.log('4', response.data['message']) 
+          //     this.currentPage = 'account'
+          // }
+          console.log(response);
         })["catch"](function (error) {
           return console.log(error);
         });
