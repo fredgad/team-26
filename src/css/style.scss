@@ -393,6 +393,44 @@ nav {
       width: 100%;
       background: #eee;
     }
+
+    .staff {
+
+      .search {
+
+        div {
+
+          img {
+
+          }
+        }
+        input {
+
+        }
+      }
+      .staff__table {
+        display: flex;
+        flex-direction: column;
+
+        .th {
+          display: flex;
+
+          .fio {
+
+          }
+          .passport {
+
+          }
+          .options {
+
+          }
+        }
+        .tr {
+          display: flex;
+
+        }
+      }
+    }
   }
 } 
 

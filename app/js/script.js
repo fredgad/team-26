@@ -19,10 +19,29 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       authorisation: {
         mail: '',
-        pass: ''
+        pass: '',
+        arr: {}
       },
       account: {
-        accountPage: 'staff'
+        accountPage: 'organisationData',
+        companyData: {
+          companyType: '',
+          companyName: '',
+          inn: '',
+          number: '',
+          mail: '',
+          staff: ''
+        },
+        staffnameData: [{
+          name: 'Идрисов Руслан Алексеевич',
+          passport: '9024242341'
+        }, {
+          name: 'Шмидрисов Руслан Алексеевич',
+          passport: '9024242341'
+        }, {
+          name: 'Барбарисов Руслан Алексеевич',
+          passport: '9024242341'
+        }]
       }
     },
     computed: {
@@ -55,6 +74,18 @@ document.addEventListener('DOMContentLoaded', function () {
       submit: function submit() {
         this.combineRegistrationForm;
         this.sendAjax();
+      },
+      auth: function auth() {
+        this.authorisation.arr = {
+          mail: this.authorisation.mail,
+          pass: this.authorisation.pass
+        };
+        var authentificationArr = JSON.stringify(this.authorisation.arr);
+        axios.post('./form.php', authentificationArr).then(function (response) {
+          return console.log(response.data);
+        })["catch"](function (error) {
+          return console.log(error);
+        });
       },
       switchPage: function switchPage(xxx) {
         this.currentPage = xxx; // console.log(this.currentPage)

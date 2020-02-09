@@ -106,10 +106,10 @@
         <div class="authorisationPage" v-if="currentPage === 'autorisationPage'">
             <form>
                 <p>Ваша почта: </p>
-                <input v-model="authorisation.pass" placeholder="mail@mail.com">
-                <p>Пароль: </p>
-                <input v-model="authorisation.mail" placeholder="отредактируй меня">
-                <div class="authorisationSubmit">Войти</div>  
+                <input v-model="authorisation.mail" placeholder="mail@mail.com">
+                <p>Пароль: </p> 
+                <input v-model="authorisation.pass" placeholder=""> 
+                <div @click={{auth()}} class="authorisationSubmit">Войти</div>  
             </form>
         </div>
     </main>
@@ -163,10 +163,46 @@
             </nav>
 
             <div v-if="account.accountPage === 'organisationData'" class="organisationData">
-                organisationData 
+                <div>
+                    <div>
+                        <p class="companyType"></p>
+                        <div class="companyName"></div>
+                    </div>
+                    <div>
+                        <p>ИНН</p>
+                        <p class="inn">{{ account.companyData.companyType }}</p>
+                    </div>
+                    <div>
+                        <p>Номер телефона</p> 
+                        <p class="number">{{ account.companyData.number }}</p>
+                    </div>
+                    <div>
+                        <p>Почта</p>
+                        <p class="mail">{{ account.companyData.mail }}</p>
+                    </div>
+                    <div>
+                        <p>Кол-во сотрудников</p>
+                        <p class="staff">{{ account.companyData.staff }}</p>    
+                    </div>
+                </div>
             </div>
             <div v-if="account.accountPage === 'staff'" class="staff">
-                staff
+                <div class="search">
+                    <div><img src="" alt=""></div>
+                    <input type="text">
+                </div>
+
+                <div class="staff__table">
+                    <div class="th">
+                        <div class="fio">ФИО</div>
+                        <div class="passport">ПАСПОРТ</div>
+                        <div class="options"><img src="./images/banners/" alt=""></div>
+                    </div>
+                    <div v-for="item in account.staffnameData"  class="tr">
+                        <div>{{item.name}}</div>
+                        <div>{{item.passport}}</div>
+                    </div>
+                </div>
             </div>
             <div v-if="account.accountPage === 'buyTickets'" class="buyTickets">
                 buyTickets

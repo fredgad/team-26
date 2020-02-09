@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var app = new Vue({
         el: '#wrapper',  
         data: { 
-            currentPage: 'account',
+            currentPage: 'account', 
             registration: {
                 number: '+7',
                 inn: '', 
@@ -21,10 +21,24 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             authorisation: {
                 mail: '',
-                pass: ''
+                pass: '',
+                arr: {}
             },
             account: {
-                accountPage: 'staff'
+                accountPage: 'organisationData',
+                companyData: {
+                    companyType: '',
+                    companyName: '',
+                    inn: '',
+                    number: '',
+                    mail: '',
+                    staff: ''
+                },
+                staffnameData: [
+                    {name: 'Идрисов Руслан Алексеевич', passport: '9024242341'},
+                    {name: 'Шмидрисов Руслан Алексеевич', passport: '9024242341'},
+                    {name: 'Барбарисов Руслан Алексеевич', passport: '9024242341'},
+                ]
             }
         },
         computed: {
@@ -53,7 +67,18 @@ document.addEventListener('DOMContentLoaded', function() {
         methods: {
             submit() {
                 this.combineRegistrationForm
-                this.sendAjax()
+                this.sendAjax() 
+            },
+            auth() { 
+                this.authorisation.arr = {
+                    mail: this.authorisation.mail,
+                    pass: this.authorisation.pass,
+                }  
+                let authentificationArr  = JSON.stringify(this.authorisation.arr)
+                axios
+                    .post('./form.php', authentificationArr)
+                    .then(response => console.log(response.data))
+                    .catch(error => console.log(error));
             },
             switchPage(xxx) {
                 this.currentPage = xxx
